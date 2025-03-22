@@ -17,4 +17,12 @@ public class WorkshopPrinter {
         System.out.println("-----  "+title);
     }
 
+    public static void print(String text){
+        System.out.println(text);
+    }
+
+    public static void print(String prefix, String text){
+        System.out.println(prefix +" : "+text);
+    }
+
 }
