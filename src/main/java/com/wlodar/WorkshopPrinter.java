@@ -25,8 +25,16 @@ public class WorkshopPrinter {
         System.out.println(prefix +" : "+text);
     }
 
+    public static void print(String prefix, Object text){
+        System.out.println(prefix +" : "+text);
+    }
+
     public static void printfThread(String format, String message){
         System.out.printf("[%s] "+format+"%n", Thread.currentThread().getName(), message);
+    }
+
+    public static void printThread(String message){
+        System.out.printf("[%s] %s%n",Thread.currentThread(),message);
     }
 
 }
