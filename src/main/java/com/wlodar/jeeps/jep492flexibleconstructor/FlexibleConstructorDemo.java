@@ -12,12 +12,14 @@ public class FlexibleConstructorDemo {
 
 
     private static void validateBeforeCreation(){
+        WorkshopPrinter.subtitle("Cosntructor parameters validation");
         var l1=new LongRepresentation(-11);
         var l2=new PositiveOnly(1);
         var l3=new PositiveOnly(-1);
     }
 
     private static void illegalCase(){
+        //uncomment illegal creation cases in constructor
         var illegal=new IllegalCreation(1);
         var o=new Outer();
     }
@@ -47,8 +49,8 @@ class IllegalCreation{
 
     public IllegalCreation(long value) {
         this.someValue = value; //can assign to this before super constructor
-        //System.out.println(this); //can not reference this before constructor
-        //var i=someValue; //illegal implicit 'this'
+//        System.out.println(this); //can not reference this before constructor
+//        var i=someValue; //illegal implicit 'this'
         //System.out.println(super.hashCode()); //access to super fields/method also illegal
         super();
     }

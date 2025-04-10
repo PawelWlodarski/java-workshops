@@ -14,7 +14,7 @@ public class PrimitiveSwitchDemo {
 
     static void testValue(Object value) {
         String result = switch (value) {
-            //case 42 -> "for now forbidden, planned for the future"
+            //case 42 -> "for now forbidden, planned for the future";
             case int i       -> "Matched int: " + i;
             case double d    -> "Matched double: " + d;
             case boolean b   -> "Matched boolean: " + b;

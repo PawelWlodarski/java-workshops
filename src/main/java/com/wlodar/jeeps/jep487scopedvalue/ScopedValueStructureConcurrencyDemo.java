@@ -37,14 +37,14 @@ public class ScopedValueStructureConcurrencyDemo {
         return null;
     }
 
-    private static void messageWithId(String message) {
-        long threadId = Thread.currentThread().threadId();
-        System.out.printf("[%s] %s thread sees: %s%n", threadId, message ,requestId.get());
-    }
-
     static Void callService() {
         messageWithId("callService");
         return null;
+    }
+
+    private static void messageWithId(String message) {
+        long threadId = Thread.currentThread().threadId();
+        System.out.printf("[%s] %s thread sees: %s%n", threadId, message ,requestId.get());
     }
 
 

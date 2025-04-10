@@ -15,7 +15,7 @@ public class StreamGatherersIntro {
     );
 
     public static void main(String[] args) {
-//        flatMapExample();
+        flatMapExample();
 //        mapMultiExample();
 //        gathererExample();
 //        gathererExampleExplicit();
