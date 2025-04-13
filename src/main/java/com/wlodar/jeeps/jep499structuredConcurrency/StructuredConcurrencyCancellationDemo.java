@@ -1,4 +1,4 @@
-package com.wlodar.jeeps.jep449structuredConcurrency;
+package com.wlodar.jeeps.jep499structuredConcurrency;
 
 import com.wlodar.WorkshopPrinter;
 

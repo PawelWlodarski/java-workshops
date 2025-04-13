@@ -1,6 +1,6 @@
 package com.wlodar.jeeps.jep286vars;
 
-import com.wlodar.WorkshopPrinter;
+import static com.wlodar.WorkshopPrinter.*;
 import jakarta.annotation.Nonnull;
 
 import java.io.BufferedReader;
@@ -13,11 +13,12 @@ import java.util.stream.Stream;
 
 import static java.lang.System.out;
 
+//Java 10
 public class LocalVariableTypeInference {
 
 
     public static void main(String[] args) {
-        WorkshopPrinter.title("Local Variable Type Interference");
+        title("Local Variable Type Interference");
 
         example1ListType();
         example2ForEach();
@@ -32,7 +33,7 @@ public class LocalVariableTypeInference {
      * //1 - uncomment to see that var inferred proper type
      */
     static void example1ListType(){
-        WorkshopPrinter.subtitle("Example 1 : Inferring list type");
+        subtitle("Example 1 : Inferring list type");
         //both definition are equivalent
         //List<String> list = Arrays.asList("one", "two", "three");
         var list = Arrays.asList("one", "two", "three");
@@ -48,7 +49,7 @@ public class LocalVariableTypeInference {
      * Use in foreach
      */
     static void example2ForEach(){
-        WorkshopPrinter.subtitle("Example 2 : Inferring type in for each");
+        subtitle("Example 2 : Inferring type in for each");
         //here because of var dev may forget to convert stream into array
         var even= IntStream.iterate(0, n-> n+2).limit(10).toArray();
         for (var e: even){
@@ -60,7 +61,7 @@ public class LocalVariableTypeInference {
      * Use in try with resources
      */
     static void example3TryWithResources(){
-        WorkshopPrinter.subtitle("Example 3 : Inferring type in try with resources");
+        subtitle("Example 3 : Inferring type in try with resources");
         String data = "Line 1\nLine 2\nLine 3";
 
         try (var reader = new BufferedReader(new StringReader(data))) {
@@ -74,19 +75,21 @@ public class LocalVariableTypeInference {
     /**
      * Declaration to interface needs to be explicit
      */
-    static void example4DeclarationToInterface(){
+    static List<String> example4DeclarationToInterface(){
         List<String> l1=new ArrayList<>();
         l1=new LinkedList<>();
 
         var l2=new ArrayList<String>();
         //l2=new LinkedList<>();  l2 is ArrayList
+        return l2; // NO IMPLEMENTATION LEAK!!! returns List<String>
     }
+
 
     /**
      * Adhoc anonymous class is created to represent Runnable with additional functionality
      */
     static void example5AdhocClassDeclaration(){
-        WorkshopPrinter.subtitle("Example 5 : ad hoc type calling run twice");
+        subtitle("Example 5 : ad hoc type calling run twice");
         var v = new Runnable() {
             public void run() {
                 out.println("just run");
@@ -111,7 +114,7 @@ public class LocalVariableTypeInference {
      */
 
     static void example6VarInLambda(){
-        WorkshopPrinter.subtitle("Example 6 : Var in lambda with annotations");
+        subtitle("Example 6 : Var in lambda with annotations");
         var result=Stream.of("aa","bbb","ccc",null)
                 .filter(Objects::nonNull) //comment to see warnings
                 .map((@Nonnull var s) -> s.length())
@@ -124,7 +127,7 @@ public class LocalVariableTypeInference {
      * Use var to improve redability of stream chain invocation
      */
     static void example7Readability(){
-        WorkshopPrinter.subtitle("Example 7 : Simplifying stream chain call");
+        subtitle("Example 7 : Simplifying stream chain call");
         record Transaction(String user, int amount, String status) {}
         record ProcessedTransaction(String user, int amount) {}
 
