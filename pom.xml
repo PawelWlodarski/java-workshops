@@ -39,6 +39,21 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.11.3</version>
+                <configuration>
+                    <source>24</source>
+                    <additionalJOptions>
+                        <additionalJOption>--enable-preview</additionalJOption>
+                    </additionalJOptions>
+                    <sourceFileIncludes>
+                        <sourceFileInclude>**/MarkdownFeaturesDemo.java</sourceFileInclude>
+                    </sourceFileIncludes>
+
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
