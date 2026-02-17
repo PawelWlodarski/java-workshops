@@ -14,7 +14,7 @@ public class WorkshopPrinter {
     }
 
     public static void subtitle(String title){
-        System.out.println("-----  "+title);
+        System.out.println(System.lineSeparator() +  "-----  "+title);
     }
 
     public static void print(String text){
