@@ -1,6 +1,6 @@
 package com.wlodar.jeeps.jep495simplesourcefiles;
 
-import java.io.IO;
+import java.lang.IO;
 
 public class JustSimpleSourceDemo {
     public void main() {

@@ -1,3 +1,5 @@
+import static java.lang.IO.println;
+
 public void main() {
     println("As simple as that");
 }
