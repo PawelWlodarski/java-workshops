@@ -1,4 +1,4 @@
-package com.wlodar.jeeps.jep510;
+package com.wlodar.jeeps.jep510keyderivation;
 
 import com.wlodar.WorkshopPrinter;
 
