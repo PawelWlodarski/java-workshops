@@ -5,7 +5,7 @@ import java.lang.invoke.MethodHandle;
 
 
 public class NativeCallDemo {
-    public static void main(String[] args) throws Throwable {
+    static void main() throws Throwable {
         /**
          * Linker is new "gate" for accessing native functions.
          * Also it is an interesting sealed interface declaration

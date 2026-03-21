@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class ClassFileParser {
-    public static void main(String[] args) {
+    static void main() {
         //path not package
         Path classFilePath = Paths.get("target/classes/com/wlodar/jeeps/jep484classfileapi/SampleForClassApi.class");
 
