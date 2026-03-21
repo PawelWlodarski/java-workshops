@@ -19,7 +19,7 @@ public class CompactHeadersDemo {
         }
     }
 
-    public static void main(String[] args) {
+    static void main() {
         WorkshopPrinter.subtitle("Small Object : ");
         System.out.println(org.openjdk.jol.info.ClassLayout.parseClass(SmallObject.class).toPrintable());
         WorkshopPrinter.subtitle("Synced : ");
