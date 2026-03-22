@@ -6,7 +6,7 @@ import static com.wlodar.WorkshopPrinter.*;
 public class TextBlocks {
 
 
-    public static void main(String[] args) {
+    static void main() {
         title("JEP 378 Java 15+: TexBlocks");
         example1Html();
         example2TrailingWhitespaces();
