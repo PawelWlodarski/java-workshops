@@ -30,11 +30,21 @@ public class WorkshopPrinter {
     }
 
     public static void printfThread(String format, String message){
-        System.out.printf("[%s] "+format+"%n", Thread.currentThread().getName(), message);
+        System.out.printf("[%s] " + format + "%n", currentThreadLabel(), message);
     }
 
     public static void printThread(String message){
-        System.out.printf("[%s] %s%n",Thread.currentThread(),message);
+        System.out.printf("[%s] %s%n", currentThreadLabel(), message);
+    }
+
+    private static String currentThreadLabel() {
+        return threadLabel(Thread.currentThread());
+    }
+
+    private static String threadLabel(Thread thread) {
+        String kind = thread.isVirtual() ? "virtual" : "platform";
+        String name = thread.getName().isBlank() ? "<unnamed>" : thread.getName();
+        return kind + " | id=" + thread.threadId() + " | " + name + " | raw=" + thread;
     }
 
 }
