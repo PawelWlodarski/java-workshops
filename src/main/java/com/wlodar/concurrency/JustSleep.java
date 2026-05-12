@@ -9,4 +9,13 @@ public class JustSleep {
             Thread.currentThread().interrupt();
         }
     }
+
+    public static void exactly(int miliseconds) {
+        try {
+            Thread.sleep(miliseconds);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException(e);
+        }
+    }
 }
